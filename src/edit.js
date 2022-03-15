@@ -38,19 +38,20 @@ import apiFetch from '@wordpress/api-fetch'
  */
 const Edit = ( props ) => {
 
-	function showAttributes(props) {
-		console.log("End of Edit() -- Attributes: ", props)
-	}
+	///////////////////////////////////////
 
 	const blockProps = useBlockProps();
 	const {
 		attributes: { isLoaded, user, users }
 	} = props
 
-	console.log(props)
+	// console.log(props)
 
-	props.setAttributes ( {isLoaded: true})
-	console.log(props.attributes.isLoaded)
+	// props.setAttributes ( {isLoaded: true})
+	// console.log(props.attributes.isLoaded)
+	////////////////////// 
+	// WORKING BLOCK PROPS
+
 
 
 	const [error, setError] = useState(null);
@@ -61,19 +62,22 @@ const Edit = ( props ) => {
 	// Note: the empty deps array [] means
     // this useEffect will run once
     // similar to componentDidMount()
-    useEffect( (props) => {        
-        apiFetch( { path: '/wp/v2/users/me' } )
+    useEffect( () => {        
+        
+		apiFetch( { path: '/wp/v2/users/me' } )
         .then ( 
-            ( props ) => {
+            ( user ) => {
                 // console.log("isLoaded: ", props.attributes.isLoaded)
                 // setIsLoaded(true)
-                console.log("Before setUser function: ", props.user)
-                // setUser(props.user)
-                console.log("After setUser function: ", props.user)
-                console.log("Display name: ", props.user.name)
-                console.log("Bio: ", props.user.description)
+                console.log("[user]  Before setUser function: ", user)
+				props.setAttributes( {isLoaded: true} )
+				props.setAttributes( {user} )
+				console.log("[isLoaded]  ---", props.attributes.isLoaded)
+                console.log("[props]  After setUser function: ", props)
+                console.log("Display name: ", user.name)
+                console.log("Bio: ", user.description)
                 console.log("Email: ", user.user_email)
-            }, 
+            } , 
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
             // exceptions from actual bugs in components.
@@ -85,7 +89,7 @@ const Edit = ( props ) => {
                 console.log("ERROR: ", error    )
             }
         );
-    }, [])
+    }, [])	
 
 	function onChangeInput(props, newInput) {
 		console.log(props)
@@ -94,6 +98,7 @@ const Edit = ( props ) => {
 
 	const changeSetAttributes = () => { 
 		attributes.setAttributes( {isLoaded: true} )
+		console.log("isLoaded: ", props.isLoaded)
 	}
 
 	return (
@@ -111,6 +116,11 @@ const Edit = ( props ) => {
 				</PanelBody>
 			</InspectorControls>
 		}
+
+			<div>
+				{props.attributes.user.name}
+			</div>
+
 
 			{__('WP Engine Bio Block – hello from the editor!', 'wpenginebio')}
 
