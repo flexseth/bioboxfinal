@@ -118,7 +118,7 @@ const Edit = ( props ) => {
 		}
 
 			<div>
-				{props.attributes.user.name}
+				{props.attriuser.name}
 			</div>
 
 

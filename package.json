@@ -19,6 +19,7 @@
 	},
 	"dependencies": {
 		"@wordpress/api-fetch": "^6.1.1",
-		"@wordpress/icons": "^8.0.1"
+		"@wordpress/icons": "^8.0.1",
+		"react-gravatar": "^2.6.3"
 	}
 }
