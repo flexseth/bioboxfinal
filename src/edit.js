@@ -27,6 +27,7 @@ import { PanelBody } from '@wordpress/components'
 import UserSelector from './UserSelector.js'
 import { useState, useEffect } from '@wordpress/element'
 import apiFetch from '@wordpress/api-fetch'
+import Gravatar from 'react-gravatar'
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -71,7 +72,7 @@ const Edit = ( props ) => {
                 // setIsLoaded(true)
                 console.log("[user]  Before setUser function: ", user)
 				props.setAttributes( {isLoaded: true} )
-				props.setAttributes( {user} )
+				props.setAttributes( {user: user} )
 				console.log("[isLoaded]  ---", props.attributes.isLoaded)
                 console.log("[props]  After setUser function: ", props)
                 console.log("Display name: ", user.name)
@@ -97,8 +98,8 @@ const Edit = ( props ) => {
 	}
 
 	const changeSetAttributes = () => { 
-		attributes.setAttributes( {isLoaded: true} )
-		console.log("isLoaded: ", props.isLoaded)
+		props.setAttributes( {isLoaded: true} )
+		console.log("isLoaded: ", props.attributes.isLoaded)
 	}
 
 	return (
@@ -116,15 +117,11 @@ const Edit = ( props ) => {
 				</PanelBody>
 			</InspectorControls>
 		}
-
-			<div>
-				{props.attriuser.name}
-			</div>
-
-
-			{__('WP Engine Bio Block – hello from the editor!', 'wpenginebio')}
-
-			<showAttributes />
+		
+		<Gravatar email={props.attributes.user.user_demail} size={150} />
+		<h2>{ props.attributes.user.name}</h2>
+		<p>{ props.attributes.user.description }</p>
+			
 		</div>
 	);
 
