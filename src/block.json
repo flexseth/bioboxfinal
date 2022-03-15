@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wpenginebio/wpenginebio",
+	"version": "1.1.0",
+	"title": "WP Engine Bio Block",
+	"category": "theme",
+	"icon": "megaphone",
+	"description": "Dynamic block to display user data from WordPress REST API.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "wpenginebio",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"attributes": {
+		"isLoaded": {
+			"type": "boolean",
+			"default": false
+		},
+		"user": {
+			"type": "object"
+		},
+		"users": {
+			"type": "array"
+		}
+	}
+}
