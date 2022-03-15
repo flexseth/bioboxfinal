@@ -118,7 +118,7 @@ const Edit = ( props ) => {
 			</InspectorControls>
 		}
 		
-		<Gravatar email={props.attributes.user.user_demail} size={150} />
+		<Gravatar email={props.attributes.user.user_email} size={150} />
 		<h2>{ props.attributes.user.name}</h2>
 		<p>{ props.attributes.user.description }</p>
 			
