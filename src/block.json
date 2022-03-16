@@ -8,7 +8,8 @@
 	"icon": "megaphone",
 	"description": "Dynamic block to display user data from WordPress REST API.",
 	"supports": {
-		"html": false
+		"html": false,
+		"multiple": false
 	},
 	"textdomain": "wpenginebio",
 	"editorScript": "file:./index.js",
@@ -20,10 +21,19 @@
 			"default": false
 		},
 		"user": {
-			"type": "object"
+			"type": "object",
+			"example": {
+				"name": "Thomas Michael",
+				"description": "He uses elementor...",
+				"user_email": "mendonca.media.group@gmail.com"
+			}
 		},
 		"users": {
 			"type": "array"
+		},
+		"isSelected": {
+			"type": "boolean",
+			"default": false
 		}
 	}
 }
