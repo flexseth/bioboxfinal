@@ -29,14 +29,14 @@ const save = ( props ) => {
 	const blockProps = useBlockProps.save();
 	const {
 		attributes: {
-			isLoaded, user, users
+			isLoaded, user, users, isSelected
 		}
 	} = props
 	return (
 		<div {...blockProps} >
 			<Gravatar email={props.attributes.user.user_email} size={150} />
-				<h2>{ props.attributes.user.name}</h2>
-				<p>{ props.attributes.user.description }</p>
+			<h2>{ props.attributes.user.name}</h2>
+			<p>{ props.attributes.user.description }</p>
 		</div>
 	);
 }
