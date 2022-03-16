@@ -43,8 +43,7 @@ const Edit = ( props ) => {
 
 	const blockProps = useBlockProps();
 	const {
-		attributes: { isLoaded, user, users 
-		}
+		attributes: { isLoaded, user, users }
 	} = props
 
 	// console.log(props)
@@ -58,9 +57,27 @@ const Edit = ( props ) => {
 		console.log("[onChangeUser] after set attributes====: ", props.attributes.user)
 	}
 
-	function usersLoaded(users) {
-		
+	function onChangeInput(props, newInput) {
+		console.log(props)
+		props.setAttributes({isLoaded: true})
 	}
+
+	const changeSetAttributes = () => { 
+		props.setAttributes( {isLoaded: true} )
+		console.log("isLoaded: ", props.attributes.isLoaded)
+	}
+
+	// output of component
+	function bio(user) {
+		return (
+			<section props={props}>
+					<Gravatar email={props.attributes.user.user_email} size={150} />
+					<h2>{ props.attributes.user.name}</h2>
+					<p>{ props.attributes.user.description }</p>
+				</section> 	
+		)
+	}
+
 
 
 	const [error, setError] = useState(null);
@@ -76,12 +93,12 @@ const Edit = ( props ) => {
 		apiFetch( { path: '/wp/v2/users/me' } )
         .then ( 
             ( user ) => {
-				props.setAttributes( {isLoaded: true} )
+				// props.setAttributes( {isLoaded: true} )
 				props.setAttributes( {user: user} )
 
 	
-				console.log("[isLoaded]  ---", props.attributes.isLoaded)
-                console.log("[props]  After setUser function: ", props)
+				console.log( props.attributes.isLoaded )
+                console.log( props )
                 console.log("Display name: ", user.name)
                 console.log("Bio: ", user.description)
                 console.log("Email: ", user.user_email)
@@ -117,39 +134,40 @@ const Edit = ( props ) => {
 		);
 	}, [])
 
-	function onChangeInput(props, newInput) {
-		console.log(props)
-		props.setAttributes({isLoaded: true})
-	}
-
-	const changeSetAttributes = () => { 
-		props.setAttributes( {isLoaded: true} )
-		console.log("isLoaded: ", props.attributes.isLoaded)
-	}
-
 	{console.log("[attributes]: ", props.attributes)}
 	{console.log("[user]: ", props.attributes.user)}
 	
-	return (
-		<div {...blockProps}>
-	{
-		<InspectorControls>
-			<PanelBody title={__("Select User")}>
-				
-				{/* <input onChange={ changeSetAttributes } type="text" /> */}
-				
-			</PanelBody>
-		</InspectorControls>
+	if (error) {
+		return <div>Error: {error.message}</div>
 	}
-		<section props={props}>
+	else if (!props.attributes.isLoaded) {
+		return <div>Loading...</div>
+	}
+	
+	else { // API loaded, return fields (otherwise it throws errors)
+		
+		return (
+		<div {...blockProps}>
+		
+		{ /* Block Settings */ } 
+		{
+			<InspectorControls>
+				<PanelBody title={__("Select User")}>
+					
+					
+					
+				</PanelBody>
+			</InspectorControls>
+		}	
+
+		{ /* Block Editor Display */ } 
 			<Gravatar email={props.attributes.user.user_email} size={150} />
 			<h2>{ props.attributes.user.name}</h2>
 			<p>{ props.attributes.user.description }</p>
-		</section>
-
-		</div> 
+			</div> 
 			
-	);
+		);
+	}
 
 }
 
