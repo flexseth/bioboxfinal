@@ -1,4 +1,4 @@
-# wp-engine-custom-author-box
+# Coding Challenge: WP Engine => Bio Box
 Author box with color options and the ability to change the user to feature.
 
 ## Problem Statement 
