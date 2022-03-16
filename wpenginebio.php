@@ -20,11 +20,12 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
+
+ 
 function wpenginebio_wpenginebio_block_init() {
 	register_block_type( __DIR__ . '/build' );
-	// Feel like this one works
-
-	// Re-register email address for REST API User endpoint
+	
+	// Expose email in REST API users endpoint
 	register_rest_field( 'user', 'user_email',
 	array(
 	'get_callback'    => function ( $user ) {
