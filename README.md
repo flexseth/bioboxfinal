@@ -54,7 +54,6 @@ In order for the bio field to show up, the user who creates the block must have 
 If you wish the bio name to show a different name, change the display name field on your that user's profile. 
 
 ************************************
-
 ### Features and or Bugs /// TODO
 - If user doesn't have a Gravatar, currently no fallback
 - if user doesn't have a bio, currently no fallback
