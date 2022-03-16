@@ -13,6 +13,9 @@ import { __ } from '@wordpress/i18n';
  */
 import { useBlockProps } from '@wordpress/block-editor';
 
+import Gravatar from 'react-gravatar'
+
+
 /**
  * The save function defines the way in which the different attributes should
  * be combined into the final markup, which is then serialized by the block
@@ -24,12 +27,16 @@ import { useBlockProps } from '@wordpress/block-editor';
  */
 const save = ( props ) => {
 	const blockProps = useBlockProps.save();
+	const {
+		attributes: {
+			isLoaded, user, users
+		}
+	} = props
 	return (
 		<div {...blockProps} >
-			{__(
-				'WP Engine Bio Block – hello from the saved content!',
-				'wpenginebio'
-			)}
+			<Gravatar email={props.attributes.user.user_email} size={150} />
+				<h2>{ props.attributes.user.name}</h2>
+				<p>{ props.attributes.user.description }</p>
 		</div>
 	);
 }
