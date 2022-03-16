@@ -143,33 +143,31 @@ const Edit = ( props ) => {
 	else if (!props.attributes.isLoaded) {
 		return <div>Loading...</div>
 	}
-	
+
 	else { // API loaded, return fields (otherwise it throws errors)
 		
-		return (
-		<div {...blockProps}>
-		
-		{ /* Block Settings */ } 
-		{
-			<InspectorControls>
-				<PanelBody title={__("Select User")}>
-					
-				<select onChange={handleChangeUser}>
-                         <option key={props.attributes.user.id}>
-                             {props.attributes.user.name}
-                         </option>
-				</select>	
-					
-				</PanelBody>
-			</InspectorControls>
-		}	
+		const handleChangeUser = (newUser) => {
+			console.log(newUser)
+			props.setAttributes( {user: newUser})
+		}
 
-		{ /* Block Editor Display */ } 
-			<Gravatar email={props.attributes.user.user_email} size={150} />
-			<h2>{ props.attributes.user.name}</h2>
-			<p>{ props.attributes.user.description }</p>
-			</div> 
+		return (
+			<div {...blockProps}>
 			
+			{ /* Block Settings */ } 
+			{
+				<InspectorControls>
+					<PanelBody title={__("Select User")}>
+						{props.attributes.isLoaded}						
+					</PanelBody>
+				</InspectorControls>
+			}	
+
+			{ /* Block Editor Display */ } 
+				<Gravatar email={props.attributes.user.user_email} size={150} />
+				<h2>{ props.attributes.user.name}</h2>
+				<p>{ props.attributes.user.description }</p>
+				</div> 	
 		);
 	}
 
