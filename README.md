@@ -36,18 +36,28 @@ Author box with color options and the ability to change the user to feature.
 - - Evaluate for structure, documentation, readability, testability, robustness, and maintainability.
 
 
-### TODO 
-- Toggle controls
-- Dynamically display user profile info
-- Test
-
-
-
 ### Installation Instructions
-- Install Node/NPM/NPX
-- If using Local - used cloned local development environment
-- otherwise, add users (regular and CLI way)
+- Local - used cloned local development environment, ~install plugins, import posts~
+- Docker - Create a new WordPress dev environment, install plugins, import posts (which brings in users)h
 
+### Dependencies
+##### Install Necessary WordPress Packages
+- apiFetch
+`npm install @wordpress/api-fetch --save`
+- icons
+`npm install @wordpress/icons --save` 
+
+##### Install Necessary React Packages
+- Gravatar - react-gravatar
+`npm install --save react-gravatar`
+
+##### WordPress Installation
+In order for the Gravatar to pull for the default block, you must have a Gravatar set up.
+Learn more and make your Gravatar [here](http://gravatar.com)
+
+In order for the bio field to show up, the user who creates the block must have a bio or user description.
+
+If you wish the bio name to show a different name, change the display name field on your that user's profile. 
 
 
 ### Features and or Bugs /// TODO
@@ -56,12 +66,9 @@ Author box with color options and the ability to change the user to feature.
 - if there is no username, currently no fallback
 
 
-#### Install Necessary WordPress Packages
-- apiFetch
-`npm install @wordpress/api-fetch --save`
-- icons
-`npm install @wordpress/icons --save` 
-
-#### Install Necessary React Packages
-- Gravatar - react-gravatar
-`npm install --save react-gravatar`
+### TODO 
+- Toggle controls
+- Dynamically display user profile info
+- Test
+- Full install instructions
+- Build package and deploy as plugin - what's the best practice here?
