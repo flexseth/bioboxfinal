@@ -154,7 +154,11 @@ const Edit = ( props ) => {
 			<InspectorControls>
 				<PanelBody title={__("Select User")}>
 					
-					
+				<select onChange={handleChangeUser}>
+                         <option key={props.attributes.user.id}>
+                             {props.attributes.user.name}
+                         </option>
+				</select>	
 					
 				</PanelBody>
 			</InspectorControls>
