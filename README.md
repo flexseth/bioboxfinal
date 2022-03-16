@@ -6,7 +6,7 @@ Author box with color options and the ability to change the user to feature.
  
 ✅ While the box should, by default, display the user’s gravatar (via their email address), their display name, and their bio/description.
  
-
+*****************
 ### Editor UI
 
 ✅ editor - render a representation of what the block content will look like in the front end view.
@@ -19,7 +19,7 @@ Author box with color options and the ability to change the user to feature.
 
 ❌ The user should be able to toggle on/off each of the default components: gravatar, display name, and bio/description.
 
-
+************************
 ### Front-end UI
 
 ❌ The block content should display user information (gravatar, display name, bio) as specified in the Editor UI.
@@ -28,17 +28,11 @@ Author box with color options and the ability to change the user to feature.
 
 ✅ Other styles should be inherited from the theme.
 
-### Submission
-- Package plugin as a zip and submit to Amy's email
-- Do not include PII in source code
-- Developers will get source from Github, compile and run
-- - Evaluate to ensure it meets criteria in Problem Statement
-- - Evaluate for structure, documentation, readability, testability, robustness, and maintainability.
 
-
+************************************
 ### Installation Instructions
 - Local - used cloned local development environment, ~install plugins, import posts~
-- Docker - Create a new WordPress dev environment, install plugins, import posts (which brings in users)h
+- Docker - Create a new WordPress dev environment, install plugin, import posts (which brings in users)
 
 ### Dependencies
 ##### Install Necessary WordPress Packages
@@ -72,3 +66,10 @@ If you wish the bio name to show a different name, change the display name field
 - Test
 - Full install instructions
 - Build package and deploy as plugin - what's the best practice here?
+
+### Submission
+- Package plugin as a zip and submit to Amy's email
+- Do not include PII in source code
+- Developers will get source from Github, compile and run
+- - Evaluate to ensure it meets criteria in Problem Statement
+- - Evaluate for structure, documentation, readability, testability, robustness, and maintainability.
