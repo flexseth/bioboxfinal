@@ -43,16 +43,24 @@ const Edit = ( props ) => {
 
 	const blockProps = useBlockProps();
 	const {
-		attributes: { isLoaded, user, users }
+		attributes: { isLoaded, user, users 
+		}
 	} = props
 
 	// console.log(props)
 
-	// props.setAttributes ( {isLoaded: true})
-	// console.log(props.attributes.isLoaded)
 	////////////////////// 
 	// WORKING BLOCK PROPS
 
+	const onChangeUser = (newUser) => {
+		console.log("[onChangeUser] user === : ", props.attributes.user)	
+		props.setAttributes( {user: newUser})
+		console.log("[onChangeUser] after set attributes====: ", props.attributes.user)
+	}
+
+	function usersLoaded(users) {
+		
+	}
 
 
 	const [error, setError] = useState(null);
@@ -63,34 +71,51 @@ const Edit = ( props ) => {
 	// Note: the empty deps array [] means
     // this useEffect will run once
     // similar to componentDidMount()
-    useEffect( () => {        
+    useEffect( (user) => {        
         
 		apiFetch( { path: '/wp/v2/users/me' } )
         .then ( 
             ( user ) => {
-                // console.log("isLoaded: ", props.attributes.isLoaded)
-                // setIsLoaded(true)
-                console.log("[user]  Before setUser function: ", user)
 				props.setAttributes( {isLoaded: true} )
 				props.setAttributes( {user: user} )
+
+	
 				console.log("[isLoaded]  ---", props.attributes.isLoaded)
                 console.log("[props]  After setUser function: ", props)
                 console.log("Display name: ", user.name)
                 console.log("Bio: ", user.description)
                 console.log("Email: ", user.user_email)
-            } , 
+            }, 
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
             // exceptions from actual bugs in components.
             (error) => {
                 setError(error)
-                setIsLoaded(true)
+				props.setAttributes( {isLoaded: true} )
                 // props.setAttributes( {isLoaded: true} )
                 // setAttributes( {isLoaded: true} )
                 console.log("ERROR: ", error    )
             }
         );
     }, [])	
+
+	useEffect( (users) => {
+		apiFetch( { path: '/wp/v2/users?roles=author,editor,administrator' } )
+		.then ( 
+			(users) => {
+				props.setAttributes( {isLoaded: true} )
+				props.setAttributes( {users: users} )
+				console.log("Other users", users)
+			}, 
+			// Note: it's important to handle errors here
+			// instead of a catch() block so that we don't swallow
+			// exceptions from actual bugs in components.
+			(error) => {
+				props.setAttributes( {isLoaded: true} )
+				setError(error)
+			}             
+		);
+	}, [])
 
 	function onChangeInput(props, newInput) {
 		console.log(props)
@@ -102,27 +127,28 @@ const Edit = ( props ) => {
 		console.log("isLoaded: ", props.attributes.isLoaded)
 	}
 
+	{console.log("[attributes]: ", props.attributes)}
+	{console.log("[user]: ", props.attributes.user)}
+	
 	return (
+		<div {...blockProps}>
+	{
+		<InspectorControls>
+			<PanelBody title={__("Select User")}>
+				
+				{/* <input onChange={ changeSetAttributes } type="text" /> */}
+				
+			</PanelBody>
+		</InspectorControls>
+	}
+		<section props={props}>
+			<Gravatar email={props.attributes.user.user_email} size={150} />
+			<h2>{ props.attributes.user.name}</h2>
+			<p>{ props.attributes.user.description }</p>
+		</section>
 
-		<div {...useBlockProps()}>
-
-		{
-			<InspectorControls>
-				<PanelBody title={__("Select User")}>
-					{/* do stuff */}
-					{/* <UserSelector props={props} /> */}
-					<input onChange={ changeSetAttributes } type="text" />
-
-					
-				</PanelBody>
-			</InspectorControls>
-		}
-		
-		<Gravatar email={props.attributes.user.user_email} size={150} />
-		<h2>{ props.attributes.user.name}</h2>
-		<p>{ props.attributes.user.description }</p>
+		</div> 
 			
-		</div>
 	);
 
 }
