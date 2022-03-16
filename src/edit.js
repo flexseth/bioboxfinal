@@ -1,3 +1,7 @@
+/** 
+ * WordPress Dependencies 
+ */
+
 /**
  * Retrieves the translation of text.
  *
@@ -21,20 +25,23 @@ import { useBlockProps } from '@wordpress/block-editor';
  */
 import './editor.scss';
 
+/** 
+ * Block controls for allowing settings in the block editor side panel
+ */
 import { InspectorControls } from '@wordpress/block-editor';
 import { PanelBody } from '@wordpress/components'
-
-import UserSelector from './UserSelector.js'
+/**
+ * Managing component state and rendering
+ */
 import { useState, useEffect } from '@wordpress/element'
+/**
+ * Data tools
+ */
 import apiFetch from '@wordpress/api-fetch'
+/** 
+ * External Dependencies 
+ */
 import Gravatar from 'react-gravatar'
-
-import {
-    SlotFillProvider,
-    Slot,
-    Fill,
-    Panel,
-} from '@wordpress/components';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -45,12 +52,6 @@ import {
  * @return {WPElement} Element to render.
  */
 const Edit = ( props ) => {
-
-	// set a timeout so the REST API can load users....
-	// this should resolve all issues
-
-	///////////////////////////////////////
-
 	const blockProps = useBlockProps();
 	const {
 		attributes: { isLoaded, user, users }
@@ -102,81 +103,84 @@ const Edit = ( props ) => {
 			);
 	}, [])	
 
-	// {console.log("[attributes]: ", props.attributes)}
-	// {console.log("[user]: ", props.attributes.user)}
+	// switch users
+	function handleChangeUser(newUserName) {
+		// TODO: Implement dynamic view for editor (user switcher)
+		// TODO: -- useEffect, checking when the user has changed to re-render?
+
+		// props.setAttributes( {user: newUserName} ) -- doesn't work because we are receiving a string (Name) value, not an object
+
+		// Need to filter the users array by Name, which we get as a value in the parameter newUserName
+		// const newUser = users.filter( filter terms ) 
+		// --- this should return a single object that is the user whose name matches newUserName.target.value
+		// --- by searching the users array for the record with matching name (display name)
+		// TODO: implement user switcher business logic
+		// --- try using SelectControl, experimental Gutenberg component for more out of the box functionality
+	}
 	
-	if (error) {
+	/*
+	 * Note: fetching from the API was quite slow, and not having
+	 * the data there when the component was ready to render kept happening
+	 * Grabbing the data from the WordPress data store may be more efficient
+	*/
+	if (error) { // couldn't fetch data
 		return <div>Error: {error.message}</div>
 	}
-	else if (!props.attributes.isLoaded ) {
+	else if (!props.attributes.isLoaded ) { // waiting for data to return from API
 		return <div>Loading...</div>
 	}
 
-	
-	else { 
-		const bio = props.attributes.user // shorten access to variable
-		// API loaded, return bio box (otherwise it throws a damn fit)
-		// trying to display data in the DOM before it was loaded - it exploded
-		// trying to display data in the console before it was loaded, it just said undefined
+	else { // data loaded, let's go! 
 		return (
 			<div {...blockProps}>
 		
 				{ /* Block Settings */ } 
-			
-					<InspectorControls props={props}>
-						<PanelBody title={__("Select User")}>
-				
-					{/* {console.log("From panel body.........")}
-							{ console.log(props) } */}
-							
-								{/* <select 
-									props={props}
-									onChange={ handleChangeUser }>
-									{ 
-										props.attributes.users.map( ( user ) => (
-										<option 
-											key={ user.id }
-											>
-											{ user.name }
-										</option>
-										))
-									}
-								</select> */}
+				<InspectorControls props={props}>
+					<PanelBody title={__("Select User")}>
+										
+						{ 
+						   /*
+							* 
+							* // TODO: user switcher presentation
+					        * --- the component below outputs a user list but nothing more
+							*/
+						}
 
+						<select 
+							props={props}
+							onChange={ handleChangeUser }> 
+							{ 
+								props.attributes.users.map( ( user ) => (
+								<option 
+									key={ user.id }
+									>
+									{ user.name }
+								</option>
+								))
+							}
+						</select>
 
-						</PanelBody>
-					</InspectorControls>
+						{
+							/*
+								*
+								* // TODO: implement toggle functionaly as panel 
+								*
+								*/ 
+						}
+
+					</PanelBody>
+				</InspectorControls>
 				{ /* end block settings */}
 
-
 				{ /* Block Editor Display */ } 
+				<div className="bio-box">
+					<Gravatar email={props.attributes.user.user_email} size={150} />
+					<h2>Name: { props.attributes.user.name}</h2>
+					<p>Bio: { props.attributes.user.description }</p>
+				</div>
 
-						{/* {
-							(props) => {
-								if(!props.attributes.isLoaded) {
-									return <p>Loading...</p>
-								}
-								else {
-									return (
-										<div className="bio-box">
-											<Gravatar email={props.attributes.user.user_email} size={150} />
-											<h2>{ props.attributes.user.name}</h2>
-											<p>{ props.attributes.user.description }</p>
-										</div>
-									)
-								}
-							}
-						} */}
-
-
-						<div className="bio-box">
-							<Gravatar email={bio.user_email} size={150} />
-							<h2>{ bio.name}</h2>
-							<p>{ bio.description }</p>
-						</div>
-
-			</div> // end <div ...blockProps>
-			
+			</div> // end ...blockProps
+			// Phew... this works.. sorta
 		);
 	}
 
