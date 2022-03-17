@@ -31,8 +31,21 @@ Author box with color options.
 
 ************************************
 ### Installation Instructions
-🏠 Local - used cloned local development environment, ~install plugins, import posts~
-🏗 Docker - Create a new WordPress dev environment, install plugin, import posts (which brings in users)
+
+#####
+🏠 Local 
+- used cloned local development environment (preferred)
+- test plugin (Hello World post)
+
+######
+🏗 Docker 
+- Create a new WordPress dev environment, 
+- install plugin, 
+- activate plugin 
+- import posts (xml) - (which brings in users??)
+- test plugin
+    - Add a new post
+    - Add the WP Engine Bio block
 
 ##### Using the plugin
 In order for the Gravatar to display, the block creator must have a Gravatar set up with their user email 
