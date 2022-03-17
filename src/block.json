@@ -25,12 +25,7 @@
 			"default": false
 		},
 		"user": {
-			"type": "object",
-			"example": {
-				"name": "Thomas Michael",
-				"description": "He uses elementor...",
-				"user_email": "mendonca.media.group@gmail.com"
-			}
+			"type": "object"
 		},
 		"users": {
 			"type": "array"
