@@ -43,13 +43,19 @@ Author box with color options.
 - Gravatar - react-gravatar
 `npm install --save react-gravatar`
 
-##### WordPress Installation
-In order for the Gravatar to pull for the default block, you must have a Gravatar set up.
+##### Using the plugin
+In order for the Gravatar to display, the block creator must have a Gravatar set up with their user email 
 Learn more and make your Gravatar [here](http://gravatar.com)
 
-In order for the bio field to show up, the user who creates the block must have a bio or user description.
+**Bio Description:** In order for the bio field to show up, the block creator must have a bio or user description.
 
-If you wish the bio name to show a different name, change the display name field on your that user's profile. 
+Only one bio box is allowed per page with this implementation. 
+
+**Bio Name:** 
+To change which name displays for your bio
+- change your nickname 
+- change your display name 
+settings in your WordPress user profile
 
 ************************************
 ### TODO 
