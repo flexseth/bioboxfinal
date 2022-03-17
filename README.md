@@ -55,17 +55,17 @@ If you wish the bio name to show a different name, change the display name field
 
 ************************************
 ### Features and or Bugs /// TODO
-- If user doesn't have a Gravatar, currently no fallback
-- if user doesn't have a bio, currently no fallback
-- if there is no username, currently no fallback
+⚠️ If user doesn't have a Gravatar, currently no fallback. Should fallback to uploaded profile pic or default
+⚠️ Nothing displayed if user hasn't set their bio/description
+⚠️ Name might display username if a preferred name hasn't been set
 
 
 ### TODO 
-- Toggle controls
-- Dynamically display user profile info
+⬜️  Toggle controls
+⬜️  Dynamically display user profile info - `useEffect()`?
 - Test
 - Full install instructions
-- Build package and deploy as plugin - what's the best practice here?
+- Build package and deploy as plugin
 
 ### Submission
 - Package plugin as a zip and submit to Amy's email
