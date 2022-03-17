@@ -54,21 +54,13 @@ In order for the bio field to show up, the user who creates the block must have 
 If you wish the bio name to show a different name, change the display name field on your that user's profile. 
 
 ************************************
-### Features and or Bugs /// TODO
-
-⚠️ If user doesn't have a Gravatar, currently no fallback. Should fallback to uploaded profile pic or default
-
-⚠️ Nothing displayed if user hasn't set their bio/description
-
-⚠️ Name might display username if a preferred name hasn't been set
-
-
 ### TODO 
 ⬜️  Toggle controls
 ⬜️  Dynamically display user profile info - `useEffect()`?
-- Test
-- Full install instructions
-- Build package and deploy as plugin
+🕵️‍♂️ Audit for PII
+🧪 Test
+🧳 Full install instructions
+🚀 Build package and deploy as plugin
 
 ### Submission
 - Package plugin as a zip and submit to Amy's email
@@ -76,3 +68,12 @@ If you wish the bio name to show a different name, change the display name field
 - Developers will get source from Github, compile and run
 - - Evaluate to ensure it meets criteria in Problem Statement
 - - Evaluate for structure, documentation, readability, testability, robustness, and maintainability.
+
+************************************
+### Features and or Bugs /// TODO
+
+⚠️ If user doesn't have a Gravatar, should fallback to uploaded profile pic or default
+
+⚠️ Nothing displayed if user hasn't set their bio/description
+
+⚠️ Name might display username if a preferred name hasn't been set
