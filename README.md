@@ -59,8 +59,8 @@ If you wish the bio name to show a different name, change the display name field
 
 ⬜️ Dynamically display user profile info - `useEffect()`? - user switcher
 
-🕵️‍♂️ Audit for PII
-
+🔎 Audit for PII
+ 
 🧪 Test
 
 🧳 Full install instructions
