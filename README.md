@@ -54,6 +54,11 @@ Author box with color options.
     - Add the WP Engine Bio block
     - rejoice
 
+#####
+🕋 Shared Web Hosts
+
+Unsure how the user would run this without NPM. `npm run build` maybe?
+
 ******************************
 ### Caveats
 **Exclusivity:** 
@@ -87,6 +92,8 @@ To change which name displays for your bio
 🧳 Full install instructions
 
 🚀 Build package and deploy as plugin
+
+🕋 Figure out how to package dependencies with plugin
 
 ### Submission
 - Package plugin as a zip and submit to Amy's email
