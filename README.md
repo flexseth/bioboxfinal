@@ -1,5 +1,5 @@
-# Coding Challenge: WP Engine => Bio Box
-Author box with color options and the ability to change the user to feature.
+# Coding Challenge: WP Engine => Bio Box Beta 
+Author box with color options.
 
 ## Problem Statement 
 ⬜️ The goal of this coding exercise is to create a WordPress plugin that leverages React, the WordPress Block API, and the REST API of your local development site to create a custom block that, when placed in the content of a post or page, will display a user profile box.
@@ -55,8 +55,8 @@ If you wish the bio name to show a different name, change the display name field
 
 ************************************
 ### TODO 
-⬜️  Toggle controls
-⬜️  Dynamically display user profile info - `useEffect()`?
+⬜️ Toggle controls
+⬜️ Dynamically display user profile info - `useEffect()`? - user switcher
 🕵️‍♂️ Audit for PII
 🧪 Test
 🧳 Full install instructions
