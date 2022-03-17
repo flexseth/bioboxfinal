@@ -103,7 +103,17 @@ To change which name displays for your bio
 - - Evaluate for structure, documentation, readability, testability, robustness, and maintainability.
 
 ************************************
-### Features and or Bugs /// TODO
+### Troubleshooting
+Can't add block in block editor
+
+Managed Web Posts / Local (shell access)
+- Build packages: You'll have to run `npm install` from the plugin root directory 
+- Run npm? Is it necessary to run `npm start` to start the package manager?
+
+Shared Web Host (no shell access)
+- On a shared host, you will need to get your hosting provider to do this
+
+### Features and or Bugs
 
 ⚠️ If user doesn't have a Gravatar, should fallback to uploaded profile pic or default
 
