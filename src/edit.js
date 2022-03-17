@@ -63,13 +63,12 @@ const Edit = ( props ) => {
 	// Note: the empty deps array [] means
     // this useEffect will run once
     // similar to componentDidMount()
+	// fetch user who created block
     useEffect( (user) => {        
 		apiFetch( { path: '/wp/v2/users/me' } )
         .then ( 
             ( user ) => {
-				props.setAttributes( {user: user} )
-				console.log("user.....", user)
-	
+				props.setAttributes( {user: user} )	
             }, 
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
@@ -82,6 +81,7 @@ const Edit = ( props ) => {
         );
     }, [])
 
+	// fetch users that are author, editor, or admin
 	useEffect( (users) => {
 			apiFetch( { path: '/wp/v2/users?roles=author,editor,administrator' } )
 			.then ( 
@@ -89,9 +89,6 @@ const Edit = ( props ) => {
 					props.setAttributes( {users: users} )
 					props.setAttributes( {isLoaded: true} )
 				}, 
-				// Note: it's important to handle errors here
-				// instead of a catch() block so that we don't swallow
-				// exceptions from actual bugs in components.
 				(error) => {
 					props.setAttributes( {isLoaded: true} )
 					setError(error)
@@ -175,7 +172,7 @@ const Edit = ( props ) => {
 				</div>
 
 			</div> // end ...blockProps
-			// Phew... this works.. sorta
+			// component rendered
 		);
 	}
 }
