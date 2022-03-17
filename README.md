@@ -38,8 +38,6 @@ Author box with color options.
 ##### Install Necessary WordPress Packages
 🏴󠁶󠁥󠁷󠁿 apiFetch
 `npm install @wordpress/api-fetch --save`
-🏴󠁶󠁥󠁷󠁿 icons
-`npm install @wordpress/icons --save` 
 
 ##### Install Necessary React Packages
 - Gravatar - react-gravatar
