@@ -1,0 +1,5 @@
+{
+	"presets": [ "@wordpress/babel-preset-default" ]
+	// babel polyfill for browsers that don't support ESNext
+	// @see https://github.com/WordPress/gutenberg/tree/HEAD/packages/babel-preset-default#polyfill
+}
