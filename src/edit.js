@@ -77,8 +77,6 @@ const Edit = ( props ) => {
             (error) => {
                 setError(error)
 				props.setAttributes( {isLoaded: true} )
-                // props.setAttributes( {isLoaded: true} )
-                // setAttributes( {isLoaded: true} )
                 console.log("ERROR: ", error    )
             }
         );
@@ -90,8 +88,6 @@ const Edit = ( props ) => {
 				(users) => {
 					props.setAttributes( {users: users} )
 					props.setAttributes( {isLoaded: true} )
-
-					console.log("users......", users)
 				}, 
 				// Note: it's important to handle errors here
 				// instead of a catch() block so that we don't swallow
@@ -121,10 +117,12 @@ const Edit = ( props ) => {
 	}
 	
 	// start component render
-	if (error) { // couldn't fetch data
+	if (error) { 
+		// couldn't fetch data
 		return <div>Error: {error.message}</div>
 	}
-	else if (!props.attributes.isLoaded ) { // waiting for data to return from API
+	else if (!props.attributes.isLoaded ) { 
+		// waiting for data to return from API fetch
 		return <div>Loading...</div>
 	}
 
@@ -180,7 +178,6 @@ const Edit = ( props ) => {
 			// Phew... this works.. sorta
 		);
 	}
-
 }
 
 export default Edit
