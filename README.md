@@ -31,11 +31,13 @@ Author box with color options.
 
 ************************************
 ### Installation Instructions
+Requires WordPress 5.x and the WordPress REST API *enabled*
 
 #####
 🏠 Local 
 - used cloned local development environment (preferred)
 - test plugin (Hello World post)
+⬜️ - tested in Local... *(**************)
 
 ######
 🏗 Docker 
@@ -54,6 +56,8 @@ Author box with color options.
     - Add the WP Engine Bio block
     - rejoice
 
+- ⬜️ Tested in Docker *(**********)
+
 #####
 🕋 Shared Web Hosts
 
@@ -63,11 +67,12 @@ Unsure how the user would run this without NPM. `npm run build` maybe?
 ### Caveats
 **Exclusivity:** 
 Only one bio box is allowed per page with this implementation.
-
-*Hire me to see beta 2..*
+This was done to simplify with development during the block.
+There are use cases for including multiple bio blocks on the same page (About us).
 
 **Gravatar** 
-In order for the Gravatar to display, the block creator must have a Gravatar set up with their user email.  
+In order for the Gravatar to display, the block creator must have a Gravatar set up with the email they are using to log into this WordPress installation.
+
 Learn more and make your Gravatar [here](http://gravatar.com)
 
 **Bio Description:** 
@@ -82,7 +87,8 @@ To change which name displays for your bio
 ### TODO 
 ⬜️ Toggle controls
 
-⬜️ Dynamically display user profile  - `useEffect()` - user switcher
+⬜️ Dynamically display user profile  
+- `useEffect()` - re-render block when user changes
 
 🔎 ~Audit for PII~
  
@@ -91,21 +97,13 @@ To change which name displays for your bio
 
 🧳 Full install instructions
 
-🚀 Build package and deploy as plugin
-
-🕋 Figure out how to package dependencies with plugin
-
-### Submission
-- Package plugin as a zip and submit to Amy's email
-- Do not include PII in source code
-- Developers will get source from Github, compile and run
-- - Evaluate to ensure it meets criteria in Problem Statement
-- - Evaluate for structure, documentation, readability, testability, robustness, and maintainability.
 
 ************************************
 ### Troubleshooting
-Can't add block in block editor
 
+Can't add block in block editor. This usually happens because the plugin package has not been built, installing all of the necessary Node modules to run the application in the browser.
+
+#### Hosting
 Managed Web Posts / Local (shell access)
 - Build packages: You'll have to run `npm install` from the plugin root directory 
 - Run npm? Is it necessary to run `npm start` to start the package manager?
@@ -113,10 +111,31 @@ Managed Web Posts / Local (shell access)
 Shared Web Host (no shell access)
 - On a shared host, you will need to get your hosting provider to do this
 
+***************
 ### Features and or Bugs
 
-⚠️ If user doesn't have a Gravatar, should fallback to uploaded profile pic or default
+⚠️ If user doesn't have a Gravatar,
+- [FALLBACK]    to uploaded profile pic on WordPress user profile
+- [DEFAULT]     to Gravatar package default monster
+- [FEATURE]     Allow user to upload an image to use from plugin interface
+- [FEEDBACK]    Discuss "ratings" for Gravatar - currently un-restricted (G, PG, F, etc)
 
 ⚠️ Nothing displayed if user hasn't set their bio/description
+- [FEATURE]     Show message that no bio is set, allow to edit bio from plugin interface
 
 ⚠️ Name might display username if a preferred name hasn't been set
+- [FEATURE]     Allow user to set preferred display name from plugin interface
+
+- [HOSTING]     May not work on web hosts without ssh/shell access
+
+🚀 Build package and deploy as plugin?
+- Make sure to ship with polyfills for older browsers
+
+🕋 Figure out how to bundle dependencies with plugin
+- WordPress downloads, extracts and installs all libraries on plugin install
+
+📦 Create `wp-env` local development/block demo
+
+*******
+### Release Notes
+Version 1.2.1 - Initial Block Plugin features for review
