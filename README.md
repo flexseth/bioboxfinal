@@ -110,18 +110,19 @@ Shared Web Host (no shell access)
 ### Features and or Bugs
 
 ⚠️ If user doesn't have a Gravatar,
-- [FALLBACK]    to uploaded profile pic on WordPress user profile
-- [DEFAULT]     to Gravatar package default monster
-- [FEATURE]     Allow user to upload an image to use from plugin interface
-- [FEEDBACK]    Discuss "ratings" for Gravatar - currently un-restricted (G, PG, F, etc)
+- **FALLBACK**    to uploaded profile pic on WordPress user profile
+- **DEFAULT**     to Gravatar package default monster
+- **FEATURE**     Allow user to upload an image to use from plugin interface
+- **FEEDBACK**    Discuss "ratings" for Gravatar - currently un-restricted (G, PG, F, etc)
 
 ⚠️ Nothing displayed if user hasn't set their bio/description
-[FEATURE]     Show message that no bio is set, allow to edit bio from plugin interface
+ - **FEATURE**     Show message that no bio is set, allow to edit bio from plugin interface
 
 ⚠️ Name might display username if a preferred name hasn't been set
-[FEATURE]     Allow user to set preferred display name from plugin interface
+- **FEATURE**     Allow user to set preferred display name from plugin interface
 
-[HOSTING]     May not work on web hosts without ssh/shell access
+🦺 May not work on web hosts without ssh/shell access
+- **HOSTING**     
 
 🚀 Build package and deploy as plugin?
 - Make sure to ship with polyfills for older browsers
