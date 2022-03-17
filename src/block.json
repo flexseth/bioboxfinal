@@ -34,10 +34,6 @@
 		},
 		"users": {
 			"type": "array"
-		},
-		"isSelected": {
-			"type": "boolean",
-			"default": false
 		}
 	}
 }
