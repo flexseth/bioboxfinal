@@ -34,15 +34,6 @@ Author box with color options.
 🏠 Local - used cloned local development environment, ~install plugins, import posts~
 🏗 Docker - Create a new WordPress dev environment, install plugin, import posts (which brings in users)
 
-### Dependencies
-##### Install Necessary WordPress Packages
-🏴󠁶󠁥󠁷󠁿 apiFetch
-`npm install @wordpress/api-fetch --save`
-
-##### Install Necessary React Packages
-- Gravatar - react-gravatar
-`npm install --save react-gravatar`
-
 ##### Using the plugin
 In order for the Gravatar to display, the block creator must have a Gravatar set up with their user email 
 Learn more and make your Gravatar [here](http://gravatar.com)
@@ -62,7 +53,7 @@ To change which name displays for your bio
 
 ⬜️ Dynamically display user profile info - `useEffect()`? - user switcher
 
-🔎 Audit for PII
+🔎 ~Audit for PII~
  
 
 🧪 Test
