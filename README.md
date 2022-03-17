@@ -55,8 +55,11 @@ If you wish the bio name to show a different name, change the display name field
 
 ************************************
 ### Features and or Bugs /// TODO
+
 ⚠️ If user doesn't have a Gravatar, currently no fallback. Should fallback to uploaded profile pic or default
+
 ⚠️ Nothing displayed if user hasn't set their bio/description
+
 ⚠️ Name might display username if a preferred name hasn't been set
 
 
