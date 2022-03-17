@@ -46,15 +46,20 @@ Author box with color options.
 - test plugin
     - Add a new post
     - Add the WP Engine Bio block
+    - rejoice
 
 #### Caveats
-Only one bio box is allowed per page with this implementation. 
+**Exclusivity:** 
+Only one bio box is allowed per page with this implementation.
+
 *Hire me to see beta 2..*
 
-In order for the Gravatar to display, the block creator must have a Gravatar set up with their user email 
+**Gravatar** 
+In order for the Gravatar to display, the block creator must have a Gravatar set up with their user email.  
 Learn more and make your Gravatar [here](http://gravatar.com)
 
-**Bio Description:** In order for the bio field to show up, the block creator must have a bio or user description.
+**Bio Description:** 
+In order for the bio field to show up, the block creator must have a bio or user description.
 
 **Bio Name:** 
 To change which name displays for your bio
