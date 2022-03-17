@@ -2,14 +2,18 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
 	"name": "wpenginebio/wpenginebio",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"title": "WP Engine Bio Block",
 	"category": "theme",
 	"icon": "megaphone",
-	"description": "Dynamic block to display user data from WordPress REST API.",
+	"description": "Block to display user data from the WordPress REST API.",
 	"supports": {
 		"html": false,
-		"multiple": false
+		"multiple": false, 
+		"color": {
+			"background": true,
+			"text": true
+		}
 	},
 	"textdomain": "wpenginebio",
 	"editorScript": "file:./index.js",
