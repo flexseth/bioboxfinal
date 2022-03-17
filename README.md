@@ -54,8 +54,7 @@ Only one bio box is allowed per page with this implementation.
 **Bio Name:** 
 To change which name displays for your bio
 - change your nickname 
-- change your display name 
-settings in your WordPress user profile
+- change your display name setting in your WordPress user profile
 
 ************************************
 ### TODO 
