@@ -41,8 +41,8 @@ const save = ( props ) => {
 	return (
 		<div {...blockProps} >
 			<Gravatar email={props.attributes.user.user_email} size={150} />
-			<h2>__({ props.attributes.user.name}, "bioboxfinal")</h2>
-			<p>__({ props.attributes.user.description }, "bioboxfinal")</p>
+			<h2>{ __( props.attributes.user.name, "bioboxfinal") }</h2>
+			<p>{ __( props.attributes.user.description, "bioboxfinal") }</p>
 		</div>
 	);
 }

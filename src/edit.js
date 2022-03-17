@@ -147,7 +147,7 @@ const Edit = ( props ) => {
 								<option 
 									key={ user.id }
 									>
-									{ user.name }
+									{ __(user.name, "bioboxfinal")  }
 								</option>
 								))
 							}
@@ -167,11 +167,11 @@ const Edit = ( props ) => {
 				{ /* Block Editor Display */ } 
 				<div className="bio-box">
 					<Gravatar email={props.attributes.user.user_email} size={150} />
-					<h2>Name: { props.attributes.user.name}</h2>
-					<p>Bio: { props.attributes.user.description }</p>
+					<h2>{ __(props.attributes.user.name, "bioboxfinal") } </h2>
+					<p>{ __(props.attributes.user.description, "bioboxfinal") }</p>
 				</div>
 
-			</div> // end ...blockProps
+			</div> // end ...blockProps	
 			// component rendered
 		);
 	}
