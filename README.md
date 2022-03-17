@@ -40,9 +40,15 @@ Author box with color options.
 ######
 🏗 Docker 
 - Create a new WordPress dev environment, 
-- install plugin, 
-- activate plugin 
-- import posts (xml) - (which brings in users??)
+- Open up your shell for this Docker image
+- navigate to plugins directory
+- `git clone` the repo
+- `cd` into the repo directory
+- run `npm install` to install dependencies
+- import posts 
+    - Tools > import
+    - Install the WordPress importer if it is not installed
+    - Import data.xml from the plugin directory ~// TODO: Does this work?~
 - test plugin
     - Add a new post
     - Add the WP Engine Bio block
@@ -71,7 +77,7 @@ To change which name displays for your bio
 ### TODO 
 ⬜️ Toggle controls
 
-⬜️ Dynamically display user profile info - `useEffect()`? - user switcher
+⬜️ Dynamically display user profile  - `useEffect()` - user switcher
 
 🔎 ~Audit for PII~
  
