@@ -4,7 +4,7 @@
  * Description:       Dynamic block to display user data from WordPress REST API.
  * Requires at least: 5.8
  * Requires PHP:      7.0
- * Version:           1.1.0
+ * Version:           1.2.1
  * Author:            Software Engineer II candidate for WP Engine
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
