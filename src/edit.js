@@ -108,21 +108,19 @@ const Edit = ( props ) => {
 		// TODO: Implement dynamic view for editor (user switcher)
 		// TODO: -- useEffect, checking when the user has changed to re-render?
 
-		// props.setAttributes( {user: newUserName} ) -- doesn't work because we are receiving a string (Name) value, not an object
-
+		// props.setAttributes( {user: newUserName} ) 
+		// -- doesn't work because we are receiving a string (Name) value, not an object
+		//
 		// Need to filter the users array by Name, which we get as a value in the parameter newUserName
 		// const newUser = users.filter( filter terms ) 
 		// --- this should return a single object that is the user whose name matches newUserName.target.value
 		// --- by searching the users array for the record with matching name (display name)
+		//
 		// TODO: implement user switcher business logic
-		// --- try using SelectControl, experimental Gutenberg component for more out of the box functionality
+		// TODO: try using SelectControl, experimental Gutenberg component for more out of the box functionality
 	}
 	
-	/*
-	 * Note: fetching from the API was quite slow, and not having
-	 * the data there when the component was ready to render kept happening
-	 * Grabbing the data from the WordPress data store may be more efficient
-	*/
+	// start component render
 	if (error) { // couldn't fetch data
 		return <div>Error: {error.message}</div>
 	}
@@ -145,10 +143,10 @@ const Edit = ( props ) => {
 					        * --- the component below outputs a user list but nothing more
 							*/
 						}
-
+	
 						<select 
 							props={props}
-							onChange={ handleChangeUser }> 
+							onChange={ handleChangeUser }>  
 							{ 
 								props.attributes.users.map( ( user ) => (
 								<option 
@@ -162,10 +160,9 @@ const Edit = ( props ) => {
 
 						{
 							/*
-								*
-								* // TODO: implement toggle functionaly as panel 
-								*
-								*/ 
+							*
+							* 	// TODO: implement toggle functionaly as panel 
+							*/ 
 						}
 
 					</PanelBody>
