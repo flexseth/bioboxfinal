@@ -36,9 +36,9 @@ Author box with color options.
 
 ### Dependencies
 ##### Install Necessary WordPress Packages
-- apiFetch
+🏴󠁶󠁥󠁷󠁿 apiFetch
 `npm install @wordpress/api-fetch --save`
-- icons
+🏴󠁶󠁥󠁷󠁿 icons
 `npm install @wordpress/icons --save` 
 
 ##### Install Necessary React Packages
