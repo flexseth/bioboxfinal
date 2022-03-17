@@ -48,7 +48,8 @@ Author box with color options.
     - Add the WP Engine Bio block
     - rejoice
 
-#### Caveats
+******************************
+### Caveats
 **Exclusivity:** 
 Only one bio box is allowed per page with this implementation.
 
