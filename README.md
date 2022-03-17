@@ -1,4 +1,4 @@
-# Coding Challenge: WP Engine => Bio Box Beta 
+# Coding Challenge: WP Engine Bio Box
 Author box with color options.
 
 ## Problem Statement 
@@ -31,8 +31,8 @@ Author box with color options.
 
 ************************************
 ### Installation Instructions
-- Local - used cloned local development environment, ~install plugins, import posts~
-- Docker - Create a new WordPress dev environment, install plugin, import posts (which brings in users)
+🏠 Local - used cloned local development environment, ~install plugins, import posts~
+🏗 Docker - Create a new WordPress dev environment, install plugin, import posts (which brings in users)
 
 ### Dependencies
 ##### Install Necessary WordPress Packages
