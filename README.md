@@ -73,6 +73,7 @@ Back in the Site Shell for this Local site...
 - Please use the Twenty Twentytwo theme when importing
 
 `wp plugin install wordpress-importer --activate`
+
 `wp import import.xml --authors="create"`
 
 
