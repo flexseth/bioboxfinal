@@ -60,7 +60,7 @@ wp user create "Nathan Rice" "Nathan.Rice@WPEngine.com" --role="administrator" -
 `
 
 ##### Create Brian Gardner via wp-cli
-`wp user create "Brian Gardner" "Brian.Gardner@WPEngine.com" --display_name="Brian Gardner" --user_pass="password" --description="Designer. #WordPress expert. Taylor Swift fan. Principal Developer Advocate at @WPEngine. Founder of @StudioPress. Creator of @FrostWP." --role="author"
+`wp user create "Brian Gardner" "Brian.Gardner@WPEngine.com" --display_name="Brian Gardner" --user_pass="password" --description="Designer. #WordPress expert. Taylor Swift fan. Principal Developer Advocate at @WPEngine. Founder of @StudioPress. Creator of @FrostWP." --role="administrator"
 `
 
 ### Import posts, map to authors
@@ -86,6 +86,10 @@ In order for the bio field to show up, the block creator must have a user descri
 To change which name displays for your bio
 - add a nickname in your WordPress user profile
 - change your display name setting in your WordPress user profile
+
+
+**Edge Cases**
+yes
 
 ************************************
 ### TODO 
@@ -119,14 +123,15 @@ Shared Web Host (no shell access)
 ***************
 ### Features and or Bugs
 
-⚠️ If user doesn't have a Gravatar,
+⚠️ If user doesn't have a Gravatar
 - **FALLBACK**    to uploaded profile pic on WordPress user profile
 - **DEFAULT**     ~~to Gravatar package default monster~~ WordPress default user avatar
 - **FEATURE**     Allow user to upload an image to use from plugin interface
 - **FEEDBACK**    Discuss "ratings" for Gravatar - currently un-restricted (G, PG, F, etc)
 
 ⚠️ Nothing displayed if user hasn't set their bio/description
- - **FEATURE**     Show message that no bio is set, allow to edit bio from plugin interface
+ - **FEATURE**     
+ Show message that no bio is set, allow to edit bio from plugin interface
 
 ⚠️ Name might display username if a preferred name hasn't been set
 - **FEATURE**     Allow user to set preferred display name from plugin interface
@@ -152,4 +157,4 @@ WordPress downloads, extracts and installs all dependencies on plugin install
 
 *******
 ### Release Notes
-Version 1.2.1 - Initial Block Plugin features for review
+Version 1.2.1 - Initial Block Plugin features for review.
