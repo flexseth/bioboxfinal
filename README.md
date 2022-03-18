@@ -109,7 +109,8 @@ yes
 ************************************
 ### Troubleshooting
 
-Can't add block in block editor. This usually happens because the plugin package has not been built, installing all of the necessary Node modules to run the application in the browser.
+> Can't add block in block editor. 
+Make sure the plugin is built using NPM and the steps above.
 
 
 
@@ -130,7 +131,7 @@ Can't add block in block editor. This usually happens because the plugin package
 
 
 ### HOSTING, building the plugin
--  May not work on web hosts without ssh/shell access
+May not work on web hosts without ssh/shell access
 - 🦺 web host would have to manually install ... or...
 
 🚀 Build package and deploy as plugin
@@ -147,6 +148,8 @@ WordPress downloads, extracts and installs all dependencies on plugin install
 - currently web host would need to install plugin for you
 
 📦 Other local development environments and packages
+
+### etc
 
 💬 Language files needed for translation?
 
