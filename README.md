@@ -32,10 +32,16 @@ Author box with color options.
 ************************************
 ### Installation Instructions
 
+### Requirements
+- Local
+- Node, NPM, NPX
+- Git
+
 
 ### Dev environment 
 - Create a new WordPress dev environment in Local 
-- Open Shell
+- Right click the dev environment and select Open Site Shell
+- Navigate to the plugins directory of this install
 - `git clone` the block repo
 - `cd` into the repo directory
 - `npm install` to install dependencies
@@ -44,45 +50,37 @@ Author box with color options.
 ### Create Users, Posts, tests
 In Local, right click the site you have installed the plugin on. Select Open Site Shell. From thecommand line, enter the following commands to generate your three users. Please note these commands will not work in the normal filesystem, you must go to the Site Shell in Local (which should load in Terminal)
 
-##### Create Nathan Rice via wp-cli
-`
-wp user create --user-login="Nathan Rice" --user-email="Nathan.Rice@WPEngine.com"
---role="administrator" --display_name="Nathan Rice" --user_pass="password" --description="Prorofessional button masher. Fiercely defensive '90s kid. Recovering political junkie. Not even internet-famous."
-`
-
-##### Create Brian Gardner via wp-cli
-`wp user create --user-login="Brian Gardner" --user-email="Brian.Gardner@WPEngine.com"
---role="author" --display_name="Nathan Rice" --user_pass="password" --description="Prorofessional button masher. Fiercely defensive '90s kid. Recovering political junkie. Not even internet-famous."
-`
-
 ##### Create an administrator for your site
 `wp user create --user-login="admin" --user-email="hireme@wpengine.com" --role="administrator" --user_pass="password" --display_name="Captain Admin" --description="Applicant for Software Engineer II at WP Engine"
 `
 
+##### Create Nathan Rice via wp-cli
+`
+wp user create "Nathan Rice" "Nathan.Rice@WPEngine.com" --role="administrator" --user_pass="password" --nickname="Nathan Rice" --description="Prorofessional button masher. Fiercely defensive '90s kid. Recovering political junkie. Not even internet-famous."
+`
+
+##### Create Brian Gardner via wp-cli
+`wp user create "Brian Gardner" "Brian.Gardner@WPEngine.com" --display_name="Brian Gardner" --user_pass="password" --description="Designer. #WordPress expert. Taylor Swift fan. Principal Developer Advocate at @WPEngine. Founder of @StudioPress. Creator of @FrostWP." --role="author"
+`
+
 ### Import posts, map to authors
-Import content from WordPress Dashboard
-- Tools > import
-- Install the WordPress importer if it is not installed
-- Import import-content.xml from the plugin directory 
-- Map import fields to users
-- test plugin
-    - Check current posts
-    - Add a new post w/WP Engine Bio block
-    - rejoice (but see caveats and ...read more...)
+`wp import import.xml --authors="create"`
+
 
 ### Caveats
 **Exclusivity:** 
 Only one bio box is allowed per page with this implementation.
 This was done to simplify with development during the block.
-There are use cases for including multiple bio blocks on the same page (About us).
+There are use cases for including multiple bio blocks on the same page (About Us, Our Sponsors..).
+
 
 **Gravatar** 
-A default WordPress Avatar will display if the user has not set up their Globally Recognized Avatar (Gravatar). In order for the Gravatar to display, the block creator must have a Gravatar set up with the email they are using to log into this WordPress installation. If this is correct, when you add yourself as a user to the website should pull your Gravatar into the Users page in the Dashboard. 
+A default avatar will display if the user has not set up their Gravatar. In order for the Gravatar to display, the block creator must have a Gravatar set up with the email they are using to log into this WordPress installation. Users that have Gravatars correctly set up will show their thumbnail in the Users page in the Dashboard. 
 
 Learn more and make your Gravatar [here](http://gravatar.com)
 
 **Bio Description:** 
-In order for the bio field to show up, the block creator must have a bio or user description.
+In order for the bio field to show up, the block creator must have a user description in their WordPress user profile. 
 
 **Bio Name:** 
 To change which name displays for your bio
@@ -108,6 +106,7 @@ To change which name displays for your bio
 ### Troubleshooting
 
 Can't add block in block editor. This usually happens because the plugin package has not been built, installing all of the necessary Node modules to run the application in the browser.
+
 
 #### Hosting
 Managed Web Posts / Local (shell access)
@@ -144,10 +143,12 @@ Shared Web Host (no shell access)
 - Figure out how to bundle dependencies with plugin
 WordPress downloads, extracts and installs all dependencies on plugin install
 
-📦 Create `wp-env` local development/block demo
+
 
 🕋 Shared Web Hosts 
 - have plugin extract dependencies and install automatically
+
+📦 Other local development environments and packages
 
 *******
 ### Release Notes
