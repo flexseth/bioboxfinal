@@ -31,34 +31,45 @@ Author box with color options.
 
 ************************************
 ### Installation Instructions
-Requires WordPress 5.x and the WordPress REST API *enabled*
 
-#####
-🏠 Local 
-- used cloned local development environment (preferred)
-- test plugin (Hello World post)
-⬜️ - tested in Local... *(**************)
 
-######
-🏗 Docker 
-- Create a new WordPress dev environment, 
-- Open up your shell for this Docker image
-- navigate to plugins directory
-- `git clone` the repo
+### Dev environment 
+- Create a new WordPress dev environment in Local 
+- Open Shell
+- `git clone` the block repo
 - `cd` into the repo directory
-- run `npm install` to install dependencies
-- import posts 
-    - Tools > import
-    - Install the WordPress importer if it is not installed
-    - Import data.xml from the plugin directory ~// TODO: Does this work?~
+- `npm install` to install dependencies
+- `npm start` - package block files
+
+### Create Users, Posts, tests
+In Local, right click the site you have installed the plugin on. Select Open Site Shell. From thecommand line, enter the following commands to generate your three users. Please note these commands will not work in the normal filesystem, you must go to the Site Shell in Local (which should load in Terminal)
+
+##### Create Nathan Rice via wp-cli
+`
+wp user create --user-login="Nathan Rice" --user-email="Nathan.Rice@WPEngine.com"
+--role="administrator" --display_name="Nathan Rice" --user_pass="password" --description="Prorofessional button masher. Fiercely defensive '90s kid. Recovering political junkie. Not even internet-famous."
+`
+
+##### Create Brian Gardner via wp-cli
+`wp user create --user-login="Brian Gardner" --user-email="Brian.Gardner@WPEngine.com"
+--role="author" --display_name="Nathan Rice" --user_pass="password" --description="Prorofessional button masher. Fiercely defensive '90s kid. Recovering political junkie. Not even internet-famous."
+`
+
+##### Create an administrator for your site
+`wp user create --user-login="admin" --user-email="hireme@wpengine.com" --role="administrator" --user_pass="password" --display_name="Captain Admin" --description="Applicant for Software Engineer II at WP Engine"
+`
+
+### Import posts, map to authors
+Import content from WordPress Dashboard
+- Tools > import
+- Install the WordPress importer if it is not installed
+- Import import-content.xml from the plugin directory 
+- Map import fields to users
 - test plugin
-    - Add a new post
-    - Add the WP Engine Bio block
-    - rejoice
+    - Check current posts
+    - Add a new post w/WP Engine Bio block
+    - rejoice (but see caveats and ...read more...)
 
-- ⬜️ Tested in Docker *(**********)
-
-******************************
 ### Caveats
 **Exclusivity:** 
 Only one bio box is allowed per page with this implementation.
@@ -66,7 +77,7 @@ This was done to simplify with development during the block.
 There are use cases for including multiple bio blocks on the same page (About us).
 
 **Gravatar** 
-In order for the Gravatar to display, the block creator must have a Gravatar set up with the email they are using to log into this WordPress installation.
+A default WordPress Avatar will display if the user has not set up their Globally Recognized Avatar (Gravatar). In order for the Gravatar to display, the block creator must have a Gravatar set up with the email they are using to log into this WordPress installation. If this is correct, when you add yourself as a user to the website should pull your Gravatar into the Users page in the Dashboard. 
 
 Learn more and make your Gravatar [here](http://gravatar.com)
 
@@ -75,7 +86,7 @@ In order for the bio field to show up, the block creator must have a bio or user
 
 **Bio Name:** 
 To change which name displays for your bio
-- change your nickname 
+- add a nickname in your WordPress user profile
 - change your display name setting in your WordPress user profile
 
 ************************************
@@ -111,7 +122,7 @@ Shared Web Host (no shell access)
 
 ⚠️ If user doesn't have a Gravatar,
 - **FALLBACK**    to uploaded profile pic on WordPress user profile
-- **DEFAULT**     to Gravatar package default monster
+- **DEFAULT**     ~~to Gravatar package default monster~~ WordPress default user avatar
 - **FEATURE**     Allow user to upload an image to use from plugin interface
 - **FEEDBACK**    Discuss "ratings" for Gravatar - currently un-restricted (G, PG, F, etc)
 
@@ -121,14 +132,17 @@ Shared Web Host (no shell access)
 ⚠️ Name might display username if a preferred name hasn't been set
 - **FEATURE**     Allow user to set preferred display name from plugin interface
 
-🦺 May not work on web hosts without ssh/shell access
+
 - **HOSTING**     
+-  May not work on web hosts without ssh/shell access
+- 🦺 web host would have to manually install ... or...
 
-🚀 Build package and deploy as plugin?
+🚀 Build package and deploy as plugin
 - Make sure to ship with polyfills for older browsers
-
-🕋 Figure out how to bundle dependencies with plugin
-- WordPress downloads, extracts and installs all libraries on plugin install
+- This is the way... but I've never done it before
+- All the everything
+- Figure out how to bundle dependencies with plugin
+WordPress downloads, extracts and installs all dependencies on plugin install
 
 📦 Create `wp-env` local development/block demo
 
