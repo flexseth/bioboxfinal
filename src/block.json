@@ -9,7 +9,6 @@
 	"description": "Block to display user data from the WordPress REST API.",
 	"supports": {
 		"html": false,
-		"multiple": false, 
 		"color": {
 			"background": true,
 			"text": true
