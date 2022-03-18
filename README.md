@@ -108,15 +108,23 @@ To change which name displays for your bio
 - change your display name setting in your WordPress user profile
 
 **Tested with...**
+
 WP Engine Themes
+
 ✅ Genesis Sample (Genesis Framework) 
+
 ✅ Genesis Block Theme (FSE)
+
 ✅ Frost 
 
 WordPress Themes
+
 ✅ TT1 Blocks ⚠️
+
 ✅ Twenty Twenty-one ⚠️
+
 ✅ Twenty Twenty
+
 ✅ _underscores
 
 ⚠️ = blocks don't show up on home page 
