@@ -71,7 +71,7 @@ emails for Brian and Nathan, and you will see their bios display.
 
 ### Caveats
 **Must be admin**
-Editor preview only works for admin, a limitation of the users endpoint
+Editor preview only works for admin
 - This is a bug, it's documented in the code
 - last minute edge case, very fixable
 
