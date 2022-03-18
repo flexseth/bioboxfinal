@@ -68,8 +68,12 @@ wp user create "Nathan Rice" "Nathan.Rice@WPEngine.com" --role="administrator" -
 ` 
 
 ### Import posts, map to authors
+Back in the Site Shell for this Local site...
+- Install WordPress Importer
+- Please use the Twenty Twentytwo theme when importing
+`wp plugin install wordpress-importer --activate`
 `wp import import.xml --authors="create"`
-Please use the Twenty Twentytwo theme when importing
+
 
 If for some reason the import doesn't work correctly, please create users
 Brian Gardner, Nathan Rice, and an admin. Put in names and bios, official
