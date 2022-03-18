@@ -135,6 +135,7 @@ WordPress Themes
 ************************************
 ### TODO 
 Functionality requirements
+
 ⬜️ Toggle controls
 - Admin only?
 
