@@ -1,6 +1,4 @@
-/**
- * WordPress Dependencies
- */
+/** WordPress Dependencies */
 
 /**
  * Retrieves the translation of text.
@@ -17,9 +15,7 @@ import { __ } from '@wordpress/i18n';
  */
 import { useBlockProps } from '@wordpress/block-editor';
 
-/**
- * External dependencies
- */
+/** External dependencies */
 import Gravatar from 'react-gravatar'
 
 /**
@@ -42,13 +38,17 @@ const save = ( props ) => {
 	} = props
 
 	return (
+
 		<div {...blockProps} >
+
 			<Gravatar email={props.attributes.user.user_email} size={150} />
 			<h2>{ __( props.attributes.user.name, "bioboxfinal") }</h2>
 			<p>{ __( props.attributes.user.description, "bioboxfinal") }</p>
+
 			{/* "Good enough for 'government work' " -Mom & Dad */}
 		</div>
 	);
+
 }
 
 export default save
