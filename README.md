@@ -122,6 +122,7 @@ Functionality requirements
 
 #### Edge Cases
 Fix Block Preview for non-Administrators
+> This block has encountered an error and cannot be previewed.
 
 Case: Block created by any user, another user wants to edit this page. 
 Block editor breaks because this user can't access /users/ endpoint,
@@ -141,6 +142,14 @@ of assuming to fetch /me, if this block has a user set already
 > Can't add block in block editor. 
 Make sure plugin is built using NPM and the steps above.
 Request support from plugin developer. 
+
+> Error: Sorry, you are not allowed to filter users by role.
+You are trying to add the block as non admin, which currently breaks.
+It actually adds the block, which you can see if you try to resolve the block.
+Convert it to HTML and then click Preview, it will render the user's block.
+There may be a fix for this.
+
+
 
 
 ***************
@@ -183,4 +192,5 @@ on install, download, extract, include dependencies
 
 *******
 ### Release Notes
+Verson 1.2.2  - Documentation in code and post examples
 Version 1.2.1 - Initial Block Plugin features for review.
