@@ -37,7 +37,6 @@ Author box with color options.
 - Node, NPM, NPX
 - Git
 
-
 ### Dev environment 
 - Create a new WordPress dev environment in Local 
 - Right click the dev environment and select Open Site Shell
@@ -68,6 +67,11 @@ wp user create "Nathan Rice" "Nathan.Rice@WPEngine.com" --role="administrator" -
 
 
 ### Caveats
+**Must be admin**
+Editor preview only works for admin, a limitation of the users endpoint
+- This is a bug, it's documented in the code
+- last minute edge case, very fixable
+
 **Exclusivity:** 
 Only one bio box is allowed per page with this implementation.
 This was done to simplify with development during the block.
@@ -87,21 +91,46 @@ To change which name displays for your bio
 - add a nickname in your WordPress user profile
 - change your display name setting in your WordPress user profile
 
+**Tested with...**
+WP Engine Themes
+✅ Genesis Sample (Genesis Framework) 
+✅ Genesis Block Theme (FSE)
+✅ Frost 
+
+WordPress Themes
+✅ TT1 Blocks ⚠️
+✅ Twenty Twenty-one ⚠️
+✅ Twenty Twenty
+✅ _underscores
+
+⚠️ = blocks don't show up on home page 
 
 **Edge Cases**
-yes
+
 
 ************************************
 ### TODO 
+Functionality requirements
 ⬜️ Toggle controls
+- Admin only?
 
 ⬜️ Dynamically display user profile  
 - `useEffect()` - re-render block when user changes
 
+⬜️ Toggle controls
 🔎 ~Audit for PII~
- 
 
-🧪 Test
+#### Edge Cases
+Fix Block Preview for non-Administrators
+
+Case: Block created by any user, another user wants to edit this page. 
+Block editor breaks because this user can't access /users/ endpoint,
+due to insufficient permissions. When fetching from the API, installed
+of assuming to fetch /me, if this block has a user set already 
+
+#### Theme Improvements
+🧑‍💻 Add blocks to posts loop
+- hook block data into template part
 
 🧳 Full install instructions
 
@@ -110,8 +139,8 @@ yes
 ### Troubleshooting
 
 > Can't add block in block editor. 
-Make sure the plugin is built using NPM and the steps above.
-
+Make sure plugin is built using NPM and the steps above.
+Request support from plugin developer. 
 
 
 ***************
@@ -127,7 +156,7 @@ Make sure the plugin is built using NPM and the steps above.
  - **FEATURE**    Show message that no bio is set, allow to edit bio from plugin interface
 
 ⚠️ Name might display username if a preferred name hasn't been set
-- **FEATURE**     Allow user to set preferred display name from plugin interface
+ - **FEATURE**     Allow user to set preferred display name from plugin interface
 
 
 ### HOSTING, building the plugin
@@ -139,15 +168,14 @@ May not work on web hosts without ssh/shell access
 - This is the way... but I've never done it before
 - All the everything
 - Figure out how to bundle dependencies with plugin
-WordPress downloads, extracts and installs all dependencies on plugin install
-
+on install, download, extract, include dependencies
 
 
 🕋 Shared Web Hosts 
-- have plugin extract dependencies and install automatically
+- Use production/deployable version of plugin
 - currently web host would need to install plugin for you
 
-📦 Other local development environments and packages
+📦 Other local development environments, config, tools
 
 ### etc
 
