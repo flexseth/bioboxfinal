@@ -64,7 +64,8 @@ const Edit = ( props ) => {
     // this useEffect will run once
     // similar to componentDidMount()
 	// fetch user who created block
-    useEffect( (user) => {        
+    useEffect( (user) => {  
+		if (props.attributes.isLoaded) return      
 		apiFetch( { path: '/wp/v2/users/me' } )
         .then ( 
             ( user ) => {
