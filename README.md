@@ -36,6 +36,7 @@ Author box with color options.
 - Local
 - Node, NPM, NPX
 - Git
+- WordPress themes (in main folder)
 
 ### Dev environment 
 - Create a new WordPress dev environment in Local 
@@ -80,6 +81,13 @@ Back in the Site Shell for this Local site...
 If for some reason the import doesn't work correctly, please create users
 Brian Gardner, Nathan Rice, and an admin. Put in names and bios, official
 emails for Brian and Nathan, and you will see their bios display. 
+
+One thing you will notice, is that old blocks lost their style (except those with a custom color) on import.
+Maybe because the styles were registered with another namespace? - add TODO
+
+Creating new bio blocks will add a default background color, which you can change or remove. 
+
+To check this, create a new block and look at how it displays by default on the home page.
 
 
 ### Caveats
