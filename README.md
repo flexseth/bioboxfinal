@@ -112,16 +112,9 @@ yes
 Can't add block in block editor. This usually happens because the plugin package has not been built, installing all of the necessary Node modules to run the application in the browser.
 
 
-#### Hosting
-Managed Web Posts / Local (shell access)
-- Build packages: You'll have to run `npm install` from the plugin root directory 
-- Run npm? Is it necessary to run `npm start` to start the package manager?
-
-Shared Web Host (no shell access)
-- On a shared host, you will need to get your hosting provider to do this
 
 ***************
-### Features and or Bugs
+### Features or Bugs?
 
 ⚠️ If user doesn't have a Gravatar
 - **FALLBACK**    to uploaded profile pic on WordPress user profile
@@ -152,6 +145,7 @@ WordPress downloads, extracts and installs all dependencies on plugin install
 
 🕋 Shared Web Hosts 
 - have plugin extract dependencies and install automatically
+- currently web host would need to install plugin for you
 
 📦 Other local development environments and packages
 
