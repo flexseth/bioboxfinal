@@ -64,6 +64,9 @@ wp user create "Nathan Rice" "Nathan.Rice@WPEngine.com" --role="administrator" -
 
 ### Import posts, map to authors
 `wp import import.xml --authors="create"`
+If for some reason the import doesn't work correctly, please create users
+Brian Gardner, Nathan Rice, and an admin. Put in names and bios, official
+emails for Brian and Nathan, and you will see their bios display. 
 
 
 ### Caveats
