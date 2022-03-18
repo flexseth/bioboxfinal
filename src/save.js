@@ -32,17 +32,21 @@ import Gravatar from 'react-gravatar'
  * @return {WPElement} Element to render.
  */
 const save = ( props ) => {
+
 	const blockProps = useBlockProps.save();
+
 	const {
 		attributes: {
 			isLoaded, user, users
 		}
 	} = props
+
 	return (
 		<div {...blockProps} >
 			<Gravatar email={props.attributes.user.user_email} size={150} />
 			<h2>{ __( props.attributes.user.name, "bioboxfinal") }</h2>
 			<p>{ __( props.attributes.user.description, "bioboxfinal") }</p>
+			{/* "Good enough for 'government work' " -Mom & Dad */}
 		</div>
 	);
 }
