@@ -50,7 +50,7 @@ Author box with color options.
 In Local, right click the site you have installed the plugin on. Select Open Site Shell. From thecommand line, enter the following commands to generate your three users. Please note these commands will not work in the normal filesystem, you must go to the Site Shell in Local (which should load in Terminal)
 
 ##### Create an administrator for your site
-`wp user create --user-login="admin" --user-email="hireme@wpengine.com" --role="administrator" --user_pass="password" --display_name="Captain Admin" --description="Applicant for Software Engineer II at WP Engine"
+`wp user create --user-login="Software Engineer II candidate" --user-email="hireme@wpengine.com" --role="administrator" --user_pass="password" --display_name="Captain Admin" --description="Applicant for Software Engineer II at WP Engine"
 `
 
 ##### Create Nathan Rice via wp-cli
@@ -62,8 +62,14 @@ wp user create "Nathan Rice" "Nathan.Rice@WPEngine.com" --role="administrator" -
 `wp user create "Brian Gardner" "Brian.Gardner@WPEngine.com" --display_name="Brian Gardner" --user_pass="password" --description="Designer. #WordPress expert. Taylor Swift fan. Principal Developer Advocate at @WPEngine. Founder of @StudioPress. Creator of @FrostWP." --role="administrator"
 `
 
+#### Create an Author user
+`wp user create "Author" "author@wpengine.com" --user_pass="password" --role="author" display_name="Arthur McAuthor" description="Just an everyday WordPress writer"
+` 
+
 ### Import posts, map to authors
 `wp import import.xml --authors="create"`
+Please use the Twenty Twentytwo theme when importing
+
 If for some reason the import doesn't work correctly, please create users
 Brian Gardner, Nathan Rice, and an admin. Put in names and bios, official
 emails for Brian and Nathan, and you will see their bios display. 
