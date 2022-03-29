@@ -1,7 +1,13 @@
 CHANGE TAB INDENT SIZE
 To honor formatting of these files in VS Code
 
- Type “Indentation” into the search field then head to the “Editor: Tab Size” section. Replace the default space number with your preferred one:
+Bring up preferences
+**Command** + **,** on MacOS
+**Control** + **,** on Windows
+
+
+When preferences come up
+Type “Indentation” into the search field then head to the “Editor: Tab Size” section. Replace the default space number with your preferred one:
 
 make the tab size 2. That way the repo should display correctly in your VS Code editor
 
