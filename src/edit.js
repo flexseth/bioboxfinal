@@ -126,22 +126,22 @@ const Edit = (props) => {
 
   // switch users
   function handleChangeUser(newUserName) {
-    // TODO: Implement user switcher - for website admins only
-    // TODO: -- useEffect, re-rendering when this value changes...
-    // TODO: -- or setAttributes to see if the component re-renders?
-    /**
-		 * @params		new selected user's name
-		 * @returns		{ Object } user to re-render in editor
-		 * @expected  AJAX like page refresh of component
-		const newSelectedUser = (props) => {
-			setAttributes (
-				user: users.filter( by display name ) // editor re-render?
-				// TODO: persist state of user selector
-		 } // probably need to do something fancy here
-		 */
-    // TODO: user switcher business logic - fixable with time
-    // TODO: try using SelectControl
-    // end user selector
+// TODO: Implement user switcher - for website admins only
+// TODO: -- useEffect, re-rendering when this value changes...
+// TODO: -- or setAttributes to see if the component re-renders?
+/**
+	 * @params		new selected user's name
+	 * @returns		{ Object } user to re-render in editor
+	 * @expected  AJAX like page refresh of component
+	const newSelectedUser = (props) => {
+		setAttributes (
+			user: users.filter( by display name ) // editor re-render?
+			// TODO: persist state of user selector
+		} // probably need to do something fancy here
+		*/
+// TODO: user switcher business logic - fixable with time
+// TODO: try using SelectControl
+// end user selector
   }
 
   // start component render
@@ -161,13 +161,13 @@ const Edit = (props) => {
             {/*
              *
              * 	// TODO: user switcher
-             * --- outputs a user list, only
-             * --- TODO: asynchronous update of new user bio
+             * --- outputs a user list in select element
+             *  // TODO: asynchronous update of new user bio
              *
              */}
             {() => {
               if (props.attributes.isLoaded && props.attributes.users.length) {
-                return;
+                return
               }
 
               // user can render user switcher
@@ -176,14 +176,14 @@ const Edit = (props) => {
                   <option key={user.id}>{__(user.name, "bioboxfinal")}</option>
                 ))}
               </select>;
-            }}{" "}
+            }}
             {/* end User Switcher */}
+
             {/* Toggle Displays */
             /*
              * 	// TODO: 	implement toggle functionaly for features
-             *		// TODO:  I didn't spend any time on this
-             *		// TODO:	please hire me
-             */}
+             */
+			 }
           </PanelBody>
         </InspectorControls>
         {/* end block settings */}
@@ -200,4 +200,4 @@ const Edit = (props) => {
   }
 }; // end WordPress Engine Custom Bio Box
 
-export default Edit;
+export default Edit
