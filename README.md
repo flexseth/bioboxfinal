@@ -71,6 +71,10 @@ wp user create "Nathan Rice" "Nathan.Rice@WPEngine.com" --role="administrator" -
 This plugin makes it easier to see how the interface works between various user roles.
 `wp plugin install user-switching --activate`
 
+### Install Syntax Highlighter plugin 
+This just makes the sample code a little easier to read.
+`wp plugin install syntaxhighlighter --activate`
+
 ### Import posts, map to authors
 Back in the Site Shell for this Local site...
 - Install WordPress Importer
@@ -166,7 +170,7 @@ due to insufficient permissions. When fetching from the API, installed
 of assuming to fetch /me, if this block has a user set already 
 
 #### Theme Improvements
-🧑‍💻 Add blocks to posts loop
+🧑‍💻 Add blocks to posts loop 
 - hook block data into template part
 
 🧳 Full install instructions
