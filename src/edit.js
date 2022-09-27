@@ -126,23 +126,23 @@ const Edit = (props) => {
 
   // switch users
   function handleChangeUser(newUserName) {
-// TODO: Implement user switcher - for website admins only
-// TODO: -- useEffect, re-rendering when this value changes...
-// TODO: -- or setAttributes to see if the component re-renders?
-/**
+	// TODO: Implement user switcher - for website admins only
+	// TODO: -- useEffect, re-rendering when this value changes...
+	// TODO: -- or setAttributes to see if the component re-renders?
+	/**
 	 * @params		new selected user's name
 	 * @returns		{ Object } user to re-render in editor
-	 * @expected  AJAX like page refresh of component
+	 * @expected	AJAX like page refresh of component
 	const newSelectedUser = (props) => {
 		setAttributes (
 			user: users.filter( by display name ) // editor re-render?
 			// TODO: persist state of user selector
-		} // probably need to do something fancy here
-		*/
-// TODO: user switcher business logic - fixable with time
-// TODO: try using SelectControl
-// end user selector
-  }
+		} 
+	*/
+	// TODO: user switcher business logic - fixable with time
+	// TODO: try using SelectControl? WordPress Core Component
+	// end user selector
+	}
 
   // start component render
   if (error) {
