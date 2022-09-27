@@ -69,10 +69,12 @@ wp user create "Nathan Rice" "Nathan.Rice@WPEngine.com" --role="administrator" -
 
 ### Install User Switching Plugin
 This plugin makes it easier to see how the interface works between various user roles.
+
 `wp plugin install user-switching --activate`
 
 ### Install Syntax Highlighter plugin 
 This just makes the sample code a little easier to read.
+
 `wp plugin install syntaxhighlighter --activate`
 
 ### Import posts, map to authors
