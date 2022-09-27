@@ -240,5 +240,6 @@ on install, download, extract, include dependencies
 
 *******
 ### Release Notes
+Verson 1.2.3 - Code cleanup, Demo instructions with detail added
 Verson 1.2.2  - Documentation in code and post examples
 Version 1.2.1 - Initial Block Plugin features for review.
