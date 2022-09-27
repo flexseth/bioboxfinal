@@ -93,7 +93,7 @@ const Edit = (props) => {
     // ... otherwise, initialize block as me (default display)
     apiFetch({ path: "/wp/v2/users/me" }).then(
       (user) => {
-        props.setAttributes({ user: user });
+        props.setAttributes({ user });
         // don't set isLoaded, we have more possibly to do
       },
       // Note: it's important to handle errors here
