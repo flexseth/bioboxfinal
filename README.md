@@ -84,6 +84,12 @@ Back in the Site Shell for this Local site...
 
 `wp plugin install wordpress-importer --activate`
 
+**IMPORTANT**
+For the demo of this with a little explanation, use the following import
+
+`wp import biobox-demo.xml --authors="create"`
+
+For the original demo 
 `wp import import.xml --authors="create"`
 
 
