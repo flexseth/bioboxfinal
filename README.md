@@ -33,19 +33,19 @@ Author box with color options.
 ### Installation Instructions
 
 ### Requirements
-- Local
+- Local (or some local development environment)
 - Node, NPM, NPX
 - Git
 - WordPress themes (in main folder)
 
-### Dev environment 
+### Dev environment setup
 - Create a new WordPress dev environment in Local 
-- Right click the dev environment and select Open Site Shell
+- In Local, right click the dev environment and select Open Site Shell
 - Navigate to the plugins directory of this install
 - `git clone` the block repo
 - `cd` into the repo directory
 - `npm install` to install dependencies
-- `npm start` - package block files
+- `npm start` - package block files and run wp-scripts (via Webpack)
 
 ### Create Users, Posts, tests
 In Local, right click the site you have installed the plugin on. Select Open Site Shell. From thecommand line, enter the following commands to generate your three users. Please note these commands will not work in the normal filesystem, you must go to the Site Shell in Local (which should load in Terminal)
@@ -53,7 +53,6 @@ In Local, right click the site you have installed the plugin on. Select Open Sit
 ##### Create an administrator for your site
 `wp user create "Software Engineer II candidate" "hireme@wpengine.com" --role="administrator" --user_pass="password" --display_name="Captain Admin" --description="Applicant for Software Engineer II at WP Engine"
 `
-
 
 ##### Create Nathan Rice via wp-cli
 `
@@ -67,6 +66,10 @@ wp user create "Nathan Rice" "Nathan.Rice@WPEngine.com" --role="administrator" -
 #### Create an Author user
 `wp user create "Author" "author@wpengine.com" --user_pass="password" --role="author" --display_name="Arthur McAuthor" --description="Just an everyday WordPress writer"
 ` 
+
+### Install User Switching Plugin
+This plugin makes it easier to see how the interface works between various user roles.
+`wp plugin install user-switching --activate`
 
 ### Import posts, map to authors
 Back in the Site Shell for this Local site...
